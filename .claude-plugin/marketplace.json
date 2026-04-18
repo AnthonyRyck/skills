@@ -1,0 +1,24 @@
+{
+  "name": "anthonyryck",
+  "owner": {
+    "name": "Anthony Ryck"
+  },
+  "metadata": {
+    "description": "Marketplace de plugins Claude Code personnel",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "dev-skills",
+      "description": "Collection de skills de développement : Blazor, C#, T-SQL et DbUp",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/blazor-component",
+        "./skills/csharp-standards",
+        "./skills/tsql",
+        "./skills/dbup-tsql-scripts"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "extraKnownMarketplaces": {
+    "anthonyryck": {
+      "source": {
+        "source": "url",
+        "url": "https://gitlab.com/YOUR_ORG_OR_USER/plugins-claude-code.git"
+      }
+    }
+  }
+}
