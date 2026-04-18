@@ -1,6 +1,6 @@
-# AnthonyRyck — Marketplace de Skills Claude
+# Marketplace de mes Skills Claude
 
-Marketplace personnel de skills Claude.
+Marketplace personnel de skills pour Claude Code.
 
 ## Ajouter le marketplace
 
@@ -8,7 +8,7 @@ Note : Claude code n'a pas accès directement au GitLab, il faut d'abord cloner 
 
 Ajouter le marketplace :  
 ```shell
-/plugin marketplace add ./<chemin_de_votre_clone>/skills
+/plugin marketplace add AnthonyRyck/skills
 ```
 
 ## Installer les skills
@@ -20,8 +20,6 @@ Une fois le marketplace installé, il ne reste plus qu'à installer le plugin.
 ```
 
 Ou directement dans le menu de `/plugin`  
-  
-![](Ressources/MarketInstall.png)
 
 ## Mettre à jour le marketplace
 
