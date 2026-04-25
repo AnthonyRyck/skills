@@ -1,0 +1,23 @@
+{
+  "skill_name": "blazor-vertical-slice",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Je veux créer une feature pour gérer les favoris d'un utilisateur dans mon application Blazor Server. Génère-moi la structure complète du slice avec tous les fichiers nécessaires, y compris le code C# de base pour chaque fichier.",
+      "expected_output": "Structure de dossiers complète FavorisFeature/ avec Configurations/, Models/, Repositories/, Services/, Components/ si pertinent. Fichiers: FavorisPage.razor/.razor.cs/.razor.css, FavorisViewModel, IFavorisViewService + FavorisViewService, IFavorisRepository + FavorisRepository, FavorisConfiguration avec extension AddFavorisFeature. Code minimal mais correct dans chaque fichier.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Analyse ce code et dis-moi s'il respecte les conventions Vertical Slice :\n\n```csharp\n// ProfilPage.razor.cs\npublic partial class ProfilPage\n{\n    [Inject] private HttpClient Http { get; set; } = default!;\n    [Inject] private IUserRepository UserRepository { get; set; } = default!;\n\n    private UserDto? _user;\n    private List<string> _roles = new();\n    private bool _isLoading = true;\n\n    protected override async Task OnInitializedAsync()\n    {\n        var userId = await Http.GetStringAsync(\"/api/auth/current\");\n        _user = await UserRepository.GetByIdAsync(Guid.Parse(userId));\n        _roles = await UserRepository.GetRolesAsync(Guid.Parse(userId));\n        _isLoading = false;\n    }\n\n    private async Task HandleSave()\n    {\n        var command = new UpdateUserCommand(_user!.Id, _user.Nom, _user.Email);\n        await UserRepository.UpdateAsync(command);\n    }\n}\n```",
+      "expected_output": "Identification claire de toutes les violations : logique métier dans la page (appels HTTP et repository dans OnInitializedAsync et HandleSave), pas de ViewService, pas de ViewModel (variables privées directement dans la page), injection directe du repository dans la page. Proposition de correction avec la structure correcte.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Comment est-ce que j'ajoute une nouvelle feature pour envoyer des notifications par email dans mon application Blazor Server ? Cette feature n'a pas de page, c'est un service utilisé par d'autres features.",
+      "expected_output": "Explication que une feature sans vue est parfaitement valide. Structure NotificationFeature/ avec Configurations/, Models/, Services/ (INotificationService + NotificationService). Pas de Page.razor, pas de ViewModel. Code de base pour INotificationService, NotificationService, NotificationConfiguration. Mention que ce service peut être placé dans Shared/ s'il est utilisé par plusieurs features.",
+      "files": []
+    }
+  ]
+}
